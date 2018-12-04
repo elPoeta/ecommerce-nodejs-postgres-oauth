@@ -4,11 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Felurian Wine's Store</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="../public/css/main-style.css">
+    <link rel="stylesheet" href="../public/css/header-style.css">
+    <title>Felurian</title>
 </head>
 <body>
-    <header>
-        <h1>Felurian Wine Store</h1>
+    <header class="header">
+            <nav class="nav">
+                    <div class="hamburger hide" onclick="Categoria.dropMenu(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                    </div>
+                 <a href="#" class="btn-menu hide" onclick="Categoria.dropMenu(this)">Productos  <i class="fas fa-caret-down"></i></a>
+                  
+                 <div class="dropdown-content">
+                        <div class="dropdown-header">
+                          <h2>Categorias</h2>
+                        </div> 
+                        <div id="panel-dropMenu" class="row">
+                           
+                      </div>
+                    </div>
+                    
+                </nav>
+            <h1><a href="/">felurian</a></h1>    
+
+
+            <div class="contenedor-login">
+                <ul>
+                    <li><i class="fas fa-user"></i></li>
+                    <li><a href="#" class="login" id="login-header">User</a></li>
+                </ul>                    
+            </div>
+
     </header>
 </body>
 </html>
