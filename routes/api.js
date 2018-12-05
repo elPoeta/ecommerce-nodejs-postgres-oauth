@@ -1,12 +1,11 @@
 const Router = require('koa-router');
-const categorydb = require('../db/category');
+const categorydbStatic = require('../db/categoryStatic');
 
 const router = new Router();
 
 router.get('/categories', async ctx =>{
-    const c = await categorydb.viewAll();
-    console.log('!! ',c);
-    ctx.body = c;
+    ctx.body = await categorydbStatic.viewAll;
+ 
 });
 
 module.exports = router;

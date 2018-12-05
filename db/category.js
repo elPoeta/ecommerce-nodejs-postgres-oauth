@@ -27,7 +27,10 @@ class Categorydb{
             }
          
          return cat.rows;
-        }finally{
+        }catch(error){
+            return new Error('error');
+        }
+        finally{
             console.log('end');
           await client.release();
         }

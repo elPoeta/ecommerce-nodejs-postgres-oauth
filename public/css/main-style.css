@@ -3,9 +3,16 @@
     padding: 0;
 }
 
-body{
+html {
+    height: 100%;
+  }
+
+  body{
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     font-size: 1em;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 60px auto 1fr;
 }
 a{
     text-decoration: none;

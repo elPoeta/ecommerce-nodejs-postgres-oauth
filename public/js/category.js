@@ -21,17 +21,18 @@ class Category{
                         </div>
                            ${categorias.map( categoria =>
                    ` <div class="column">
-                               <h3>${categoria.nombre}</h3>
+                               <h3>${categoria.name}</h3>
                                 <hr/>
                           <a href="#" onclick=Producto.buscarPorCategoria(${categoria.id});>Todos</a>
-                          ${categoria.subCategorias.map( sub =>
-                          `<a href="#" onclick=Producto.buscarPorSubCategoria(${sub.id});>${sub.nombre}</a>`
+                          ${categoria.subCat.map( sub =>
+                          `<a href="#" onclick=Producto.buscarPorSubCategoria(${sub.id});>${sub.name}</a>`
                         ).join('')}</div>`
                      ).join('')}`;
            document.querySelector('#panel-dropMenu').innerHTML = template;
   
         }catch(err){
                 console.log(`Error: ${err}`);
+           
         }
     }
    
