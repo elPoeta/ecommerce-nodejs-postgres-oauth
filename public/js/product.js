@@ -38,7 +38,7 @@ class Product{
         const texto = document.querySelector(`#searchProduct`);
         const txt = texto.value.toLowerCase();    
         
-        const param = {"letras":"" + txt};
+        const param = {"word":txt};
        try{
           //  loading(true);
           const productos = await Http.get(URL_BUSCAR_PRODUCTO_SERVER +JSON.stringify(param));

@@ -43,6 +43,27 @@ class Productdb{
           await client.release();
         }
     }
+
+    static async searchByName(param){
+        let client = await pool.connect(); 
+  
+        try{ 
+            const product = await client.query(`SELECT product.id, product.name, product.price, 
+            product.stock, product.image, product.is_available, product.sub_categories_id  
+            FROM product WHERE LOWER(name) LIKE LOWER($1) 
+            AND product.stock > 0 AND product.is_available = true;`,[`%${param.word}%`]);
+           
+           return product.rows;
+            
+        }catch(error){
+            return new Error('error');
+        }
+        finally{
+            console.log('end');
+          await client.release();
+        }
+   }
+
 }
 
 module.exports = Productdb;
