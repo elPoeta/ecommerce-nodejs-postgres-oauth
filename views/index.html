@@ -12,15 +12,17 @@
     <link rel="stylesheet" href="../public/css/header-style.css">
     <link rel="stylesheet" href="../public/css/main-container-style.css">
     <link rel="stylesheet" href="../public/css/principal-style.css">
+    <link rel="stylesheet" href="../public/css/product-catalog-style.css">
     <link rel="stylesheet" href="../public/css/footer-style.css">
 
     <script src="../public/js/http.js" defer></script>
     <script src="../public/js/category.js" defer></script>
     <script src="../public/js/typewriter.js" defer></script>
+    <script src="../public/js/product.js" defer></script>
 
     <title>Felurian</title>
 </head>
-<body>
+<body class="body body-image">
     <header class="header">
             <nav class="nav">
                     <div class="hamburger hide" onclick="Category.dropMenu(this)">
@@ -79,7 +81,7 @@
                       </div>
       
                   <div>
-                          <a class="fondo-grilla" href="#" onclick="Producto.buscarPorCategoria(1)">
+                          <a class="fondo-grilla" href="#" onclick="Product.findByCategory(1)">
                               <div class="texto-grilla">
                                   <h2>Vinos</h2>
                               </div>
@@ -88,7 +90,7 @@
                  </div>
        
                 <div>
-                          <a class="fondo-grilla" href="#" onclick="Producto.buscarPorCategoria(2)">
+                          <a class="fondo-grilla" href="#" onclick="Product.findByCategory(2)">
                               <div class="texto-grilla">
                                   <h2>Delicias</h2>
                               </div>
@@ -97,7 +99,7 @@
                       </div>
       
                       <div>
-                          <a class="fondo-grilla" href="#" onclick="Producto.buscarPorCategoria(3)">
+                          <a class="fondo-grilla" href="#" onclick="Product.findByCategory(3)">
                               <div class="texto-grilla">
                                   <h2>Accesorios</h2>
                               </div>

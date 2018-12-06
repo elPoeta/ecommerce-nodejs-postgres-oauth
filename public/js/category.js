@@ -17,15 +17,15 @@ class Category{
                        ` <div class="column">
                             <h3>Todos</h3>
                             <hr/>
-                         <a href="#" onclick=Producto.buscarPorCategoria(0);>Ver Todos</a> 
+                         <a href="#" onclick=Product.findByCategory(0);>Ver Todos</a> 
                         </div>
                            ${categorias.map( categoria =>
                    ` <div class="column">
                                <h3>${categoria.name}</h3>
                                 <hr/>
-                          <a href="#" onclick=Producto.buscarPorCategoria(${categoria.id});>Todos</a>
+                          <a href="#" onclick=Product.findByCategory(${categoria.id});>Todos</a>
                           ${categoria.subCat.map( sub =>
-                          `<a href="#" onclick=Producto.buscarPorSubCategoria(${sub.id});>${sub.name}</a>`
+                          `<a href="#" onclick=Product.findBySubCategory(${sub.id});>${sub.name}</a>`
                         ).join('')}</div>`
                      ).join('')}`;
            document.querySelector('#panel-dropMenu').innerHTML = template;
