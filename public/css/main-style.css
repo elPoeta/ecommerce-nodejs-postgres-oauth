@@ -13,6 +13,11 @@ html {
     min-height: 100%;
     display: grid;
     grid-template-rows: 60px auto 1fr;
+    height: 100vh;
+    background: #333 url('https://i.ibb.co/dfZ56dJ/pexels-photo-774454.jpg') no-repeat center center / cover;
+    color: #ccc;
+    /*overflow:hidden;*/
+    background-attachment: fixed;
 }
 a{
     text-decoration: none;

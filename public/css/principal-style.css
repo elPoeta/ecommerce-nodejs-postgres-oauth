@@ -1,0 +1,136 @@
+.principal{
+     display: grid;
+    grid-template-columns: 1fr;
+
+}
+.typewriter-container{
+    padding: 25px;
+    color: #fff;
+    font-size: 1.3em;
+}
+.txt-type{
+    padding: 8px;
+}
+.txt-type > .txt {
+    border-right: 0.2em solid #777;
+  }
+  .typewriter-container figure{
+    margin-top: 40px;
+}
+    .banner-img{
+        height: 150px;
+    }
+
+    .content-grilla{
+        display: grid;
+        grid-template-columns: 1fr;  
+        margin : 0 auto;
+        grid-gap: 5px; 
+    }
+    
+    .fondo-grilla{
+            position: relative;   
+            display: inline-block;
+        }
+        
+        .fondo-grilla img{
+            box-sizing: border-box;
+            display: block;
+            max-width: 100%;
+            height: auto;
+            padding: .5em;
+        }
+        
+        
+        .texto-grilla h2{
+            font-size: 1.7em;
+            color: #DDDDDE;
+            border: 3px solid #DDDDDE;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);   
+            background: rgba(0, 0, 0, .5);
+            padding: 10px;
+            
+        }
+        
+        .texto-grilla h2:hover{
+            color: #DC93AF;
+            border: 3px solid #DC93AF;
+        }
+    .content-grilla img{
+        border: 2px solid #fff;
+        background: #fff;
+        border-radius: 10px;
+    }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .typewriter-container{
+        padding: 30px;
+        font-size: 1.4em;
+    }
+    .content-grilla{
+        grid-template-columns: 1fr 1fr;       
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .typewriter-container{
+        padding: 30px;
+        font-size: 1.6em;
+    }
+
+  }
+  @media (min-width: 1025px) and (max-width: 1280px) {
+
+    .typewriter-container{
+        padding: 30px;
+        font-size: 1.8em;
+    }
+
+    .txt-type{
+        padding: 10px;
+    }
+
+    .typewriter-container figure{
+        margin-top: 50px;
+    }
+        .banner-img{
+            height: 200px;
+        }
+        .content-grilla{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);  
+        }
+        
+            
+            .texto-grilla h2{
+                font-size: 1.8em;  
+            }
+            
+  }
+  @media (min-width: 1281px) {
+    .typewriter-container{
+        padding: 30px;
+        font-size: 2em;
+    }
+
+    .txt-type{
+        padding: 10px;
+    }
+    .typewriter-container figure{
+        margin-top: 50px;
+    }
+        .banner-img{
+            height: 200px;
+        }
+        .content-grilla{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);  
+           
+        }
+        
+            
+            .texto-grilla h2{
+                font-size: 1.8em;  
+            }    
+  }
