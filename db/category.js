@@ -33,7 +33,7 @@ class Categorydb{
             return new Error('error');
         }
         finally{
-            console.log('end');
+          
           await client.release();
         }
     } 

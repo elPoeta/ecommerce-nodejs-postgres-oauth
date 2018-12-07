@@ -1,6 +1,10 @@
 const Router = require('koa-router');
+const passport = require('koa-passport');
+const {authenticated} = require('../utils/authenticated');
 const categorydbStatic = require('../db/categoryStatic');
 const productdb = require('../db/product');
+require('../utils/oauth');
+
 const router = new Router();
 
 router.get('/categories', async ctx =>{
@@ -18,4 +22,14 @@ router.get('/searchProductName', async ctx =>{
     ctx.body = await productdb.searchByName(q);
 });
 
+router.get('/oauth/google',
+passport.authenticate('google',{ scope: ['profile', 'email']}));
+
+
+router.get('/oauth/google/callback',
+  passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/'
+  })
+);
 module.exports = router;

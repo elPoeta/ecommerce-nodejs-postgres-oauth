@@ -39,7 +39,7 @@ class Productdb{
             return new Error('error');
         }
         finally{
-            console.log('end');
+       
           await client.release();
         }
     }
@@ -59,7 +59,7 @@ class Productdb{
             return new Error('error');
         }
         finally{
-            console.log('end');
+         
           await client.release();
         }
    }
