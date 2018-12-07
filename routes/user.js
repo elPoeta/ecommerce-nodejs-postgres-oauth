@@ -11,7 +11,7 @@ router.get('/authenticated', async ctx =>{
     }
     
 });
-router.get('/logout', (ctx) => {
+router.get('/logout', async (ctx) => {
     ctx.logout();
     ctx.redirect('/');
   });

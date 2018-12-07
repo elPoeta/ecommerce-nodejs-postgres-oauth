@@ -1,10 +1,9 @@
-class Category{
+class Categoria{
     static async consultar(){
         const URL_CATEGORIA_SERVER = 'api/categories';
         try{
-            const categories = await Http.get(URL_CATEGORIA_SERVER);
-            console.log(categories);
-            return categories;
+            const categorias = await Http.get(URL_CATEGORIA_SERVER);
+            return categorias;
         }catch (err){
            console.log(`Error: ${err}`); 
         }
@@ -12,27 +11,26 @@ class Category{
     
     static async cargarDropMenu(){
         try{
-            const categorias = await Category.consultar();
+            const categorias = await Categoria.consultar();
             let template =
                        ` <div class="column">
                             <h3>Todos</h3>
                             <hr/>
-                         <a href="#" onclick=Product.findByCategory(0);>Ver Todos</a> 
+                         <a href="#" onclick=Producto.buscarPorCategoria(0);>Ver Todos</a> 
                         </div>
                            ${categorias.map( categoria =>
                    ` <div class="column">
                                <h3>${categoria.name}</h3>
                                 <hr/>
-                          <a href="#" onclick=Product.findByCategory(${categoria.id});>Todos</a>
+                          <a href="#" onclick=Producto.buscarPorCategoria(${categoria.id});>Todos</a>
                           ${categoria.subCat.map( sub =>
-                          `<a href="#" onclick=Product.findBySubCategory(${sub.id});>${sub.name}</a>`
+                          `<a href="#" onclick=Producto.buscarPorSubCategoria(${sub.id});>${sub.name}</a>`
                         ).join('')}</div>`
                      ).join('')}`;
            document.querySelector('#panel-dropMenu').innerHTML = template;
   
         }catch(err){
                 console.log(`Error: ${err}`);
-           
         }
     }
    
@@ -48,4 +46,5 @@ class Category{
 }
 }
 
-Category.cargarDropMenu();
+Categoria.cargarDropMenu();
+

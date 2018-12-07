@@ -1,44 +1,21 @@
 .header{
     display: grid;
-    grid-row: 1;
-    grid-template-columns: repeat(3 1fr);
-    grid-template-rows: 60px;
+    grid-area: h;
+    justify-items: left;
     align-items: center;
     background: #48001E;
-    height: 60px;
-    text-align: center;
+}
+
+.logo-header,
+.btn-menu{
+    display: none;
+}
+.header h1 a,
+.drop-header h3,
+.login,
+.fa-user{
     color: #fff;
 }
-.header h1{
-    grid-column: 2 / 2;
-    text-align: center;
-    font-weight: 900;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    justify-self: left;
-}
-
-.header a{
-    color: #fff;
-}
-
-.header .contenedor-login{
-    grid-column: 3 / 3;
-    grid-row : 1 / 1;
-    justify-self: left;
-}
-
-.header .contenedor-login ul li{
-    list-style: none;
-    display: inline;;
-}
-.header .nav{
-    grid-column: 1 / 1;
-    grid-row : 1 / 1;
-    justify-self: left;
-    padding: 5px;
-}
-
 /*===Hamburger===*/
 
 .hamburger {
@@ -76,8 +53,18 @@
     background: #DC93AF;
 }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
+/*===MENU===*/
+
+.nav{
+    grid-column: 1 / 2;
+    grid-row : 1 / 1;
+    background: #48001E;
+    padding: 5px;
+    
+}
+
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: #933157;
   }
   
@@ -129,37 +116,82 @@
   .column a:hover {
     background-color: #ddd;
   }
+  
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+/* TITULO*/
 
+.header h1{
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    font-size: 1.8em;
+    font-weight: 900;
+    text-align: left;
+    text-transform: uppercase;
+}
+.header h1 a,
+.login{
+    text-decoration: none;
+}
+.header h1 a:hover{
+        color: #DC93AF;
+    }
+   
+     
+/*LOGIN*/
+
+.contenedor-login{
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    grid-column: 4 / 5;
+    grid-row: 1 / 1;
+    grid-gap: 3px;
+}
+.fa-user,
+.login{
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.login:hover{
+        cursor: pointer;
+        color: #DC93AF;
+    }
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    .header{
+        display: grid;
+        grid-template-columns: 80px 200px 1fr 1fr;
+        justify-items: left;
+      
+    }
+    
+  
 }
 
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   
 
-.header h1{
-    grid-column: 1 / 1;
-    font-size: 2.2em;
-    grid-row : 1 / 1;
-    justify-self: center;
- 
+.header{
+   
+    grid-template-columns: 80px repeat(7, 1fr);
+    justify-items: left;
+  
 }
-.header .contenedor-login{
-    grid-column: 3 / 3;
-    grid-row : 1 / 1;
-    justify-self: left;
-}
-
-.header .nav{
-    grid-column: 2 / 2;
-    grid-row : 1 / 1;
-    padding: 5px;
-}
+    .logo-header,
     .btn-menu{
         display: block;
     }
-  
+    .header figure{
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        justify-self: center;
+        
+    }
+    .logo-header{
+        width: 40px;
+        
+    }
+ 
     .header h1 a,
     .drop-header h3,
     .login,
@@ -204,8 +236,21 @@
       }
     
     
+    /* TITULO*/
     
+    .header h1{
+        grid-column: 2 / 2;
+        font-size: 2em;
+      
+    }
+    
+    /*LOGIN*/
+    
+    .contenedor-login{
 
+        grid-column: 7 / 8;
+        
+    }
     .fa-user,
     .login{
         font-size: 1.1em;
@@ -217,30 +262,26 @@
 }
 @media (min-width: 1281px) {
     
-
-.header h1{
-    grid-column: 1 / 1;
-    font-size: 2.5em;
-    grid-row : 1 / 1;
-    justify-self: center;
-}
-.header .contenedor-login{
-    grid-column: 3 / 3;
-    grid-row : 1 / 1;
-    justify-self: left;
-}
-
-.header .nav{
-    grid-column: 2 / 2;
-    grid-row : 1 / 1;
-    padding: 5px;
-}
-  
-       
+    .header{
+   
+        grid-template-columns: 80px repeat(7, 1fr);
+        justify-items: left;
+      
+    }
+        .logo-header,
         .btn-menu{
             display: block;
         }
-       
+        .header figure{
+            grid-column: 1 / 1;
+            grid-row: 1 / 1;
+            justify-self: center;
+            
+        }
+        .logo-header{
+            width: 40px;
+            
+        }
      
         .header h1 a,
         .drop-header h3,
@@ -286,7 +327,22 @@
           }
         
         
-
+        /* TITULO*/
+        
+        .header h1{
+            grid-column: 2 / 2;
+            font-size: 2em;
+          
+        }
+   
+        /*LOGIN*/
+        
+        .contenedor-login{
+    
+            grid-column: 7 / 8;
+            grid-gap: 15px;
+            
+        }
         .fa-user{
             font-size: 1.5em;
         }

@@ -1,0 +1,88 @@
+.footer{
+    display: grid;
+    grid-area: f;
+    grid-template-columns: 1fr;
+     background-color: #933157;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 5%;
+    font-size: .7em
+}
+.autor{
+    display: grid;
+    grid-template-columns:  repeat(3, 100px);
+    justify-content: center;
+    color: #fff;
+    padding: 5px;
+}
+
+.autor a{
+    display: grid;
+    grid-template-columns: 100px;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.autor a:hover{
+    color:#48001E;
+}
+.autor i{
+    padding: 10px;
+}
+.copy{
+   display: grid;
+   justify-content: center;
+    align-self: center;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+}
+
+.copyleft {
+    display:inline-block;
+    transform: rotate(180deg);
+  }
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .footer{
+    height: 110px;
+    font-size: .8em;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .footer{
+    height: 110px;
+    font-size: .8em;
+}
+
+  
+  
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+    .footer{
+    height: 120px;
+    font-size: 1em;
+}
+.autor a{
+    padding-right: 25px;
+}
+}
+@media (min-width: 1281px) {
+    .footer{
+    height: 120px;
+    font-size: 1em;
+}
+.autor a{
+    padding-right: 25px;
+}
+
+}

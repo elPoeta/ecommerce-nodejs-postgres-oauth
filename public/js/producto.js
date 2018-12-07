@@ -1,53 +1,52 @@
-class Product{
+class Producto{
     static async consultar(id){
         const URL_PRODUCTO_SERVER = 'api/product?&q=';
         const productos = await Http.get(URL_PRODUCTO_SERVER +JSON.stringify(id));
-        console.log('P@> ',productos);
         return productos;
     }
     
-    static async findByCategory(id){
+    static async buscarPorCategoria(id){
          const param = {from:"category", id:id};
        try{
-       //     loading(true);
-        let productos = await Product.consultar(param);
-            Product.viewProductos(productos);
-            Product.ocultarMenu();
+            loading(true);
+        let productos = await Producto.consultar(param);
+            Producto.viewProductos(productos);
+            Producto.ocultarMenu();
        } catch(err){
            console.log(`Error: ${err}`);
        }
-     //loading(false);   
+     loading(false);   
     }
     
-      static async findBySubCategory(id){
+      static async buscarPorSubCategoria(id){
         const param = {from:"subCategory", id:id};
         try{
-         //   loading(true);
-        let productos = await Product.consultar(param);
-            Product.viewProductos(productos);  
-            Product.ocultarMenu();
+            loading(true);
+        let productos = await Producto.consultar(param);
+            Producto.viewProductos(productos);  
+            Producto.ocultarMenu();
 
        } catch(err){
            console.log(`Error: ${err}`);
        }
-       // loading(false);
+        loading(false);
     }
      
-    static async findByName(){
+    static async buscarPorNombre(){
         const URL_BUSCAR_PRODUCTO_SERVER = 'api/searchProductName?&q=';
-        const texto = document.querySelector(`#searchProduct`);
+        const texto = document.querySelector(`#search`);
         const txt = texto.value.toLowerCase();    
         
-        const param = {"word":txt};
+        const param = {"word":"" + txt};
        try{
-          //  loading(true);
+            loading(true);
           const productos = await Http.get(URL_BUSCAR_PRODUCTO_SERVER +JSON.stringify(param));
-            Product.viewProductos(productos);
+            Producto.viewProductos(productos);
            
        } catch(err){
            console.log(`Error: ${err}`);
        }
-     //loading(false);   
+     loading(false);   
     }
      static viewProductos(productos){
      
@@ -62,10 +61,9 @@ class Product{
             <hr>
             <button class="btn-agregar" id="btn-agregar-${producto.id}" onclick="Carrito.agregarProducto(${producto.id})">Agregar</button>
             </div>`).join('')}</section>`;  
-            //document.querySelector('#paypal-button').style.display="none";
-            document.querySelector('.body').classList.remove("body-image");
+            document.querySelector('#paypal-button').style.display="none";
             document.querySelector('#panel-central').innerHTML = template;
-           // Lupa.lupaEventos();
+            Lupa.lupaEventos();
             
     }
     

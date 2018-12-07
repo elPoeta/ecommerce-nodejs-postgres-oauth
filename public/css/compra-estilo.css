@@ -1,0 +1,200 @@
+.seccion-compras{
+    display:grid;
+    grid-template-columns: 1fr;
+/*    grid-template-rows: 200px; */
+}
+
+.seccion-compras ul {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.lista-compras{
+    display: grid; 
+    grid-template-columns: 40px 1fr 1fr;
+    grid-template-rows: 80px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.lista-compras img{
+    box-sizing: border-box;    
+    max-width: 100%;
+    height: 80px;
+    justify-self: left;
+    padding: 5px; 
+    
+}
+
+.lista-compras h2, .lista-compras p{
+    font-size: .9em;
+    font-weight: 700;
+    text-align: center;
+    color: #48001E;
+}
+
+.subtotal{
+    font-size: .6em;
+    text-align: center;
+    color: #6394F8;
+}
+
+.contenedor-total-btn{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contenedor-total-btn h2{
+    font-size: .9em;
+    font-weight: 700;
+    text-align: center;
+    color: #48001E;
+    justify-content: center;
+}
+
+/*======Modal Final======*/
+
+
+.modal-finCompra{
+  position: fixed;
+  z-index:1;
+  left: 0;
+  top:0;
+  height: 100%;
+  width:100%;
+  overflow: auto;
+  background-color: #00000080;
+}
+
+.modal-contenido{
+  background-color:#f4f4f4;
+  margin: 20% auto;
+  width:30%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name:abrirmodal;
+  animation-duration:1s;
+}
+
+.modal-titulo h2, .modal-pie h3{
+  margin:0;
+  font-size: 1.3em;
+}
+
+.modal-titulo{
+  background:rgba(201, 119, 164, .5);
+  padding:15px;
+  color:#fff;
+}
+
+.modal-cuerpo{
+  padding:10px 20px;
+  text-align: center;
+  
+}
+.modal-cuerpo p{
+    font-size: 1.2em;
+}
+.modal-pie{
+  background:rgba(201, 119, 164, .5);;
+  padding:10px;
+  color:#fff;
+  text-align: center;
+}
+
+.modal-pie a{
+    text-decoration: none;
+    color:#fff;
+    font-style: italic;
+}
+
+
+@keyframes abrirmodal{
+  from{ opacity: 0}
+  to {opacity: 1}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .lista-compras{
+    display: grid; 
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: 90px;
+   
+}
+
+.lista-compras img{ 
+    height: 90px;
+}
+
+.lista-compras h2, .lista-compras p{
+    font-size: 1em;
+}
+
+.subtotal{
+    font-size: .8em;
+  
+}
+
+
+.contenedor-total-btn h2{
+    font-size: 1em;
+}
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+     .lista-compras{
+    display: grid; 
+    grid-template-columns: 70px 1fr 1fr;
+    grid-template-rows: 100px;
+   
+}
+
+.lista-compras img{ 
+    height: 100px;
+}
+
+.lista-compras h2, .lista-compras p{
+    font-size: 1.3em;
+}
+
+.subtotal{
+    font-size: .7em;
+  
+}
+
+
+.contenedor-total-btn h2{
+    font-size: 1.3em;
+}
+}
+
+
+@media (min-width: 1281px) {
+         .lista-compras{
+    display: grid; 
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: 120px;
+   
+}
+
+.lista-compras img{ 
+    height: 120px;
+}
+
+.lista-compras h2, .lista-compras p{
+    font-size: 1.5em;
+}
+
+.subtotal{
+    font-size: .7em;
+  
+}
+
+
+.contenedor-total-btn h2{
+    font-size: 1.5em;
+}
+}

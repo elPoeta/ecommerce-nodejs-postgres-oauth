@@ -7,7 +7,7 @@ class Http{
              headers: {
                 'Content-type': 'application/json; charset=UTF-8'
             },
-            credentials: 'same-origin'
+             credentials: 'same-origin'
            });
            
         let data = JSON.parse(await response.text());
